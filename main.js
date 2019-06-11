@@ -11,6 +11,11 @@ const path = require("path");
 const url = require("url");
 const fs = require("fs");
 
+if (require("electron-squirrel-startup")) {
+	// eslint-disable-line global-require
+	app.quit();
+}
+
 let mainWindow;
 let tray = null;
 
