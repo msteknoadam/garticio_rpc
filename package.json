@@ -9,12 +9,16 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"lint": "echo \"No linting configured\""
+		"lint": "echo \"No linting configured\"",
+		"webpack-browser": "webpack --config ./webpack.frontend.config.prod.js",
+		"webpack-app": "webpack --config ./webpack.backend.config.prod.js"
 	},
 	"author": "TEKNO",
 	"dependencies": {
 		"discord-rpc": "^3.0.2",
-		"electron-squirrel-startup": "^1.0.0"
+		"electron-squirrel-startup": "^1.0.0",
+		"webpack": "^4.39.3",
+		"webpack-cli": "^3.3.7"
 	},
 	"devDependencies": {
 		"@electron-forge/cli": "6.0.0-beta.39",

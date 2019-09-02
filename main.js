@@ -24,14 +24,23 @@ function createWindow() {
 		width: 1024,
 		height: 768,
 		resizable: true,
-		titleBarStyle: "visible",
+		titleBarStyle: "visible"
 	});
+	const assetsPath = path.join(
+		app.getAppPath(),
+		"..",
+		"..",
+		"..",
+		"..",
+		"..",
+		"assets"
+	);
 
 	mainWindow.loadURL("https://gartic.io");
-	mainWindow.setIcon(path.join(__dirname, "/assets/icon.png"));
+	mainWindow.setIcon(path.join(assetsPath, "/icon.png"));
 	mainWindow.setTitle("Gartic.IO");
 	const browserJS = fs
-		.readFileSync(path.join(__dirname, "/assets", "/browser.js"))
+		.readFileSync(path.join(assetsPath, "/browser.webpack.js"))
 		.toString();
 	mainWindow.webContents.executeJavaScript(browserJS);
 
